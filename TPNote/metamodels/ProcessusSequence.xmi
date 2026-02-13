@@ -4,93 +4,92 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:LDP2="http://LDPSequence/1.0">
-  <elements
-      xsi:type="LDP2:Activite"
-      nom="Init"
-      suivantes="//@elements.1">
-    <actions
-        xsi:type="LDP2:InstanceObj"
-        nom="calc"
-        classe="Calcul"/>
-    <actions
-        xsi:type="LDP2:CreationVar"
-        nom="valeur1"
-        type="int"
-        valeur="5"/>
-    <actions
-        xsi:type="LDP2:CreationVar"
-        nom="valeur2"
-        type="int"
-        valeur="10"/>
-    <actions
-        xsi:type="LDP2:CreationVar"
-        nom="resA"
-        type="int"
-        valeur="0"/>
-    <actions
-        xsi:type="LDP2:CreationVar"
-        nom="resB"
-        type="int"
-        valeur="0"/>
+
+  <elements xsi:type="LDP2:Activite" nom="Init" suivantes="//@elements.1">
+    
+    <actions xsi:type="LDP2:InstanceObj">
+      <objet name="calc" type="Calcul">
+        <methods nomMethode="factorial"/> 
+        <methods nomMethode="power"/>
+      </objet>
+    </actions>
+
+    <actions xsi:type="LDP2:CreationVar">
+      <var name="valeur1" type="int" valeur="5"/>
+    </actions>
+
+    <actions xsi:type="LDP2:CreationVar">
+      <var name="valeur2" type="int" valeur="10"/>
+    </actions>
+
+    <actions xsi:type="LDP2:CreationVar">
+      <var name="resA" type="int" valeur="0"/>
+    </actions>
+
+    <actions xsi:type="LDP2:CreationVar">
+      <var name="resB" type="int" valeur="0"/>
+    </actions>
   </elements>
-  <elements
-      xsi:type="LDP2:Fourche"
-      nom="Separation"
-      suivantes="//@elements.2 //@elements.3"
+
+  <elements xsi:type="LDP2:Fourche" 
+      nom="Separation" 
+      suivantes="//@elements.2 //@elements.3" 
       precedents="//@elements.0"/>
-  <elements
-      xsi:type="LDP2:Activite"
-      nom="BrancheFactorielle"
-      suivantes="//@elements.4"
+
+  <elements xsi:type="LDP2:Activite" 
+      nom="BrancheFactorielle" 
+      suivantes="//@elements.4" 
       precedents="//@elements.1">
-    <actions
-        xsi:type="LDP2:AppelMethode"
-        resultat="resA"
-        nomMethode="factorial"
-        objetAppele="calc">
-      <parametres>valeur1</parametres>
+      
+    <actions xsi:type="LDP2:AppelMethode" 
+        resultat="//@elements.0/@actions.3/@var"
+        objetAppele="//@elements.0/@actions.0/@objet"
+        method="//@elements.0/@actions.0/@objet/@methods.0">
+      <parametre parameters="//@elements.0/@actions.1/@var"/>
     </actions>
   </elements>
-  <elements
-      xsi:type="LDP2:Activite"
-      nom="BranchePuissance"
-      suivantes="//@elements.4"
+
+  <elements xsi:type="LDP2:Activite" 
+      nom="BranchePuissance" 
+      suivantes="//@elements.4" 
       precedents="//@elements.1">
-    <actions
-        xsi:type="LDP2:AppelMethode"
-        resultat="resB"
-        nomMethode="power"
-        objetAppele="calc">
-      <parametres>valeur1</parametres>
-      <parametres>valeur2</parametres>
+      
+    <actions xsi:type="LDP2:AppelMethode" 
+        resultat="//@elements.0/@actions.4/@var"
+        objetAppele="//@elements.0/@actions.0/@objet"
+        method="//@elements.0/@actions.0/@objet/@methods.1">
+      <parametre parameters="//@elements.0/@actions.1/@var //@elements.0/@actions.2/@var"/>
     </actions>
   </elements>
-  <elements
-      xsi:type="LDP2:Jonction"
-      nom="Synchronisation"
-      suivantes="//@elements.5"
+
+  <elements xsi:type="LDP2:Jonction" 
+      nom="Synchronisation" 
+      suivantes="//@elements.5" 
       precedents="//@elements.2 //@elements.3"/>
-  <elements
-      xsi:type="LDP2:Activite"
-      nom="Finalisation"
+
+  <elements xsi:type="LDP2:Activite" 
+      nom="Finalisation" 
       precedents="//@elements.4">
-    <actions
-        xsi:type="LDP2:InstanceObj"
-        nom="log"
-        classe="Logger"/>
-    <actions
-        xsi:type="LDP2:AppelMethode"
-        nomMethode="printValue"
-        objetAppele="log">
-      <parametres>resA</parametres>
+      
+    <actions xsi:type="LDP2:InstanceObj">
+      <objet name="log" type="Logger">
+         <methods nomMethode="printValue"/>
+      </objet>
     </actions>
-    <actions
-        xsi:type="LDP2:AppelMethode"
-        nomMethode="printValue"
-        objetAppele="log">
-      <parametres>resB</parametres>
+
+    <actions xsi:type="LDP2:AppelMethode" 
+        objetAppele="//@elements.5/@actions.0/@objet"
+        method="//@elements.5/@actions.0/@objet/@methods.0">
+      <parametre parameters="//@elements.0/@actions.3/@var"/>
+    </actions>
+
+    <actions xsi:type="LDP2:AppelMethode" 
+        objetAppele="//@elements.5/@actions.0/@objet"
+        method="//@elements.5/@actions.0/@objet/@methods.0">
+      <parametre parameters="//@elements.0/@actions.4/@var"/>
     </actions>
   </elements>
+
   <debut reference="//@elements.0"/>
   <fin reference="//@elements.5"/>
 </LDP2:Processus>

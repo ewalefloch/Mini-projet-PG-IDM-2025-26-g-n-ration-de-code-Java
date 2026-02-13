@@ -21,19 +21,16 @@
     <genClasses ecoreClass="LPDSequence.ecore#//Fin"/>
     <genClasses image="false" ecoreClass="LPDSequence.ecore#//Action"/>
     <genClasses ecoreClass="LPDSequence.ecore#//CreationVar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//CreationVar/nom"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//CreationVar/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//CreationVar/valeur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//CreationVar/var"/>
     </genClasses>
     <genClasses ecoreClass="LPDSequence.ecore#//InstanceObj">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//InstanceObj/nom"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//InstanceObj/classe"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//InstanceObj/objet"/>
     </genClasses>
     <genClasses ecoreClass="LPDSequence.ecore#//AppelMethode">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/resultat"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/nomMethode"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/objetAppele"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/parametres"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//AppelMethode/resultat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//AppelMethode/objetAppele"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//AppelMethode/parametre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//AppelMethode/method"/>
     </genClasses>
     <genClasses image="false" ecoreClass="LPDSequence.ecore#//ElementProcessus">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//ElementProcessus/nom"/>
@@ -42,5 +39,21 @@
     </genClasses>
     <genClasses ecoreClass="LPDSequence.ecore#//Fourche"/>
     <genClasses ecoreClass="LPDSequence.ecore#//Jonction"/>
+    <genClasses ecoreClass="LPDSequence.ecore#//VariablePrimitif">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//VariablePrimitif/valeur"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//Objet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//Objet/methods"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="LPDSequence.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//Variable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//Method/nomMethode"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//Parametre">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//Parametre/parameters"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -12,9 +12,7 @@ package LDP2;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link LDP2.CreationVar#getNom <em>Nom</em>}</li>
- *   <li>{@link LDP2.CreationVar#getType <em>Type</em>}</li>
- *   <li>{@link LDP2.CreationVar#getValeur <em>Valeur</em>}</li>
+ *   <li>{@link LDP2.CreationVar#getVar <em>Var</em>}</li>
  * </ul>
  *
  * @see LDP2.LDP2Package#getCreationVar()
@@ -23,69 +21,25 @@ package LDP2;
  */
 public interface CreationVar extends Action {
 	/**
-	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
+	 * Returns the value of the '<em><b>Var</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nom</em>' attribute.
-	 * @see #setNom(String)
-	 * @see LDP2.LDP2Package#getCreationVar_Nom()
-	 * @model
+	 * @return the value of the '<em>Var</em>' containment reference.
+	 * @see #setVar(VariablePrimitif)
+	 * @see LDP2.LDP2Package#getCreationVar_Var()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	String getNom();
+	VariablePrimitif getVar();
 
 	/**
-	 * Sets the value of the '{@link LDP2.CreationVar#getNom <em>Nom</em>}' attribute.
+	 * Sets the value of the '{@link LDP2.CreationVar#getVar <em>Var</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nom</em>' attribute.
-	 * @see #getNom()
+	 * @param value the new value of the '<em>Var</em>' containment reference.
+	 * @see #getVar()
 	 * @generated
 	 */
-	void setNom(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see LDP2.LDP2Package#getCreationVar_Type()
-	 * @model
-	 * @generated
-	 */
-	String getType();
-
-	/**
-	 * Sets the value of the '{@link LDP2.CreationVar#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Valeur</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Valeur</em>' attribute.
-	 * @see #setValeur(String)
-	 * @see LDP2.LDP2Package#getCreationVar_Valeur()
-	 * @model
-	 * @generated
-	 */
-	String getValeur();
-
-	/**
-	 * Sets the value of the '{@link LDP2.CreationVar#getValeur <em>Valeur</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Valeur</em>' attribute.
-	 * @see #getValeur()
-	 * @generated
-	 */
-	void setValeur(String value);
+	void setVar(VariablePrimitif value);
 
 } // CreationVar

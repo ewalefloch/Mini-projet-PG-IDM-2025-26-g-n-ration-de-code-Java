@@ -389,31 +389,13 @@ public interface LDP2Package extends EPackage {
 	int CREATION_VAR = 6;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Var</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATION_VAR__NOM = ACTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATION_VAR__TYPE = ACTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATION_VAR__VALEUR = ACTION_FEATURE_COUNT + 2;
+	int CREATION_VAR__VAR = ACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Creation Var</em>' class.
@@ -422,7 +404,7 @@ public interface LDP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATION_VAR_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
+	int CREATION_VAR_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Creation Var</em>' class.
@@ -444,22 +426,13 @@ public interface LDP2Package extends EPackage {
 	int INSTANCE_OBJ = 7;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Objet</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCE_OBJ__NOM = ACTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Classe</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCE_OBJ__CLASSE = ACTION_FEATURE_COUNT + 1;
+	int INSTANCE_OBJ__OBJET = ACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Instance Obj</em>' class.
@@ -468,7 +441,7 @@ public interface LDP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCE_OBJ_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+	int INSTANCE_OBJ_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Instance Obj</em>' class.
@@ -490,7 +463,7 @@ public interface LDP2Package extends EPackage {
 	int APPEL_METHODE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Resultat</b></em>' attribute.
+	 * The feature id for the '<em><b>Resultat</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -499,31 +472,31 @@ public interface LDP2Package extends EPackage {
 	int APPEL_METHODE__RESULTAT = ACTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Nom Methode</b></em>' attribute.
+	 * The feature id for the '<em><b>Objet Appele</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPEL_METHODE__NOM_METHODE = ACTION_FEATURE_COUNT + 1;
+	int APPEL_METHODE__OBJET_APPELE = ACTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Objet Appele</b></em>' attribute.
+	 * The feature id for the '<em><b>Parametre</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPEL_METHODE__OBJET_APPELE = ACTION_FEATURE_COUNT + 2;
+	int APPEL_METHODE__PARAMETRE = ACTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parametres</b></em>' attribute list.
+	 * The feature id for the '<em><b>Method</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPEL_METHODE__PARAMETRES = ACTION_FEATURE_COUNT + 3;
+	int APPEL_METHODE__METHOD = ACTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Appel Methode</em>' class.
@@ -652,6 +625,237 @@ public interface LDP2Package extends EPackage {
 	 * @ordered
 	 */
 	int JONCTION_OPERATION_COUNT = ELEMENT_PROCESSUS_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link LDP2.impl.VariableImpl <em>Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see LDP2.impl.VariableImpl
+	 * @see LDP2.impl.LDP2PackageImpl#getVariable()
+	 * @generated
+	 */
+	int VARIABLE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__TYPE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link LDP2.impl.VariablePrimitifImpl <em>Variable Primitif</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see LDP2.impl.VariablePrimitifImpl
+	 * @see LDP2.impl.LDP2PackageImpl#getVariablePrimitif()
+	 * @generated
+	 */
+	int VARIABLE_PRIMITIF = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PRIMITIF__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PRIMITIF__TYPE = VARIABLE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PRIMITIF__VALEUR = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Variable Primitif</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PRIMITIF_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Variable Primitif</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PRIMITIF_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link LDP2.impl.ObjetImpl <em>Objet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see LDP2.impl.ObjetImpl
+	 * @see LDP2.impl.LDP2PackageImpl#getObjet()
+	 * @generated
+	 */
+	int OBJET = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJET__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJET__TYPE = VARIABLE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJET__METHODS = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Objet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJET_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Objet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJET_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link LDP2.impl.MethodImpl <em>Method</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see LDP2.impl.MethodImpl
+	 * @see LDP2.impl.LDP2PackageImpl#getMethod()
+	 * @generated
+	 */
+	int METHOD = 15;
+
+	/**
+	 * The feature id for the '<em><b>Nom Methode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHOD__NOM_METHODE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Method</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHOD_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Method</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHOD_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link LDP2.impl.ParametreImpl <em>Parametre</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see LDP2.impl.ParametreImpl
+	 * @see LDP2.impl.LDP2PackageImpl#getParametre()
+	 * @generated
+	 */
+	int PARAMETRE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETRE__PARAMETERS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Parametre</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETRE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Parametre</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETRE_OPERATION_COUNT = 0;
 
 
 	/**
@@ -791,37 +995,15 @@ public interface LDP2Package extends EPackage {
 	EClass getCreationVar();
 
 	/**
-	 * Returns the meta object for the attribute '{@link LDP2.CreationVar#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the containment reference '{@link LDP2.CreationVar#getVar <em>Var</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see LDP2.CreationVar#getNom()
+	 * @return the meta object for the containment reference '<em>Var</em>'.
+	 * @see LDP2.CreationVar#getVar()
 	 * @see #getCreationVar()
 	 * @generated
 	 */
-	EAttribute getCreationVar_Nom();
-
-	/**
-	 * Returns the meta object for the attribute '{@link LDP2.CreationVar#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see LDP2.CreationVar#getType()
-	 * @see #getCreationVar()
-	 * @generated
-	 */
-	EAttribute getCreationVar_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link LDP2.CreationVar#getValeur <em>Valeur</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Valeur</em>'.
-	 * @see LDP2.CreationVar#getValeur()
-	 * @see #getCreationVar()
-	 * @generated
-	 */
-	EAttribute getCreationVar_Valeur();
+	EReference getCreationVar_Var();
 
 	/**
 	 * Returns the meta object for class '{@link LDP2.InstanceObj <em>Instance Obj</em>}'.
@@ -834,26 +1016,15 @@ public interface LDP2Package extends EPackage {
 	EClass getInstanceObj();
 
 	/**
-	 * Returns the meta object for the attribute '{@link LDP2.InstanceObj#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the containment reference '{@link LDP2.InstanceObj#getObjet <em>Objet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see LDP2.InstanceObj#getNom()
+	 * @return the meta object for the containment reference '<em>Objet</em>'.
+	 * @see LDP2.InstanceObj#getObjet()
 	 * @see #getInstanceObj()
 	 * @generated
 	 */
-	EAttribute getInstanceObj_Nom();
-
-	/**
-	 * Returns the meta object for the attribute '{@link LDP2.InstanceObj#getClasse <em>Classe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Classe</em>'.
-	 * @see LDP2.InstanceObj#getClasse()
-	 * @see #getInstanceObj()
-	 * @generated
-	 */
-	EAttribute getInstanceObj_Classe();
+	EReference getInstanceObj_Objet();
 
 	/**
 	 * Returns the meta object for class '{@link LDP2.AppelMethode <em>Appel Methode</em>}'.
@@ -866,48 +1037,48 @@ public interface LDP2Package extends EPackage {
 	EClass getAppelMethode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link LDP2.AppelMethode#getResultat <em>Resultat</em>}'.
+	 * Returns the meta object for the reference '{@link LDP2.AppelMethode#getResultat <em>Resultat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Resultat</em>'.
+	 * @return the meta object for the reference '<em>Resultat</em>'.
 	 * @see LDP2.AppelMethode#getResultat()
 	 * @see #getAppelMethode()
 	 * @generated
 	 */
-	EAttribute getAppelMethode_Resultat();
+	EReference getAppelMethode_Resultat();
 
 	/**
-	 * Returns the meta object for the attribute '{@link LDP2.AppelMethode#getNomMethode <em>Nom Methode</em>}'.
+	 * Returns the meta object for the reference '{@link LDP2.AppelMethode#getObjetAppele <em>Objet Appele</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom Methode</em>'.
-	 * @see LDP2.AppelMethode#getNomMethode()
-	 * @see #getAppelMethode()
-	 * @generated
-	 */
-	EAttribute getAppelMethode_NomMethode();
-
-	/**
-	 * Returns the meta object for the attribute '{@link LDP2.AppelMethode#getObjetAppele <em>Objet Appele</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Objet Appele</em>'.
+	 * @return the meta object for the reference '<em>Objet Appele</em>'.
 	 * @see LDP2.AppelMethode#getObjetAppele()
 	 * @see #getAppelMethode()
 	 * @generated
 	 */
-	EAttribute getAppelMethode_ObjetAppele();
+	EReference getAppelMethode_ObjetAppele();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link LDP2.AppelMethode#getParametres <em>Parametres</em>}'.
+	 * Returns the meta object for the containment reference '{@link LDP2.AppelMethode#getParametre <em>Parametre</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Parametres</em>'.
-	 * @see LDP2.AppelMethode#getParametres()
+	 * @return the meta object for the containment reference '<em>Parametre</em>'.
+	 * @see LDP2.AppelMethode#getParametre()
 	 * @see #getAppelMethode()
 	 * @generated
 	 */
-	EAttribute getAppelMethode_Parametres();
+	EReference getAppelMethode_Parametre();
+
+	/**
+	 * Returns the meta object for the reference '{@link LDP2.AppelMethode#getMethod <em>Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Method</em>'.
+	 * @see LDP2.AppelMethode#getMethod()
+	 * @see #getAppelMethode()
+	 * @generated
+	 */
+	EReference getAppelMethode_Method();
 
 	/**
 	 * Returns the meta object for class '{@link LDP2.ElementProcessus <em>Element Processus</em>}'.
@@ -971,6 +1142,122 @@ public interface LDP2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getJonction();
+
+	/**
+	 * Returns the meta object for class '{@link LDP2.VariablePrimitif <em>Variable Primitif</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable Primitif</em>'.
+	 * @see LDP2.VariablePrimitif
+	 * @generated
+	 */
+	EClass getVariablePrimitif();
+
+	/**
+	 * Returns the meta object for the attribute '{@link LDP2.VariablePrimitif#getValeur <em>Valeur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valeur</em>'.
+	 * @see LDP2.VariablePrimitif#getValeur()
+	 * @see #getVariablePrimitif()
+	 * @generated
+	 */
+	EAttribute getVariablePrimitif_Valeur();
+
+	/**
+	 * Returns the meta object for class '{@link LDP2.Objet <em>Objet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Objet</em>'.
+	 * @see LDP2.Objet
+	 * @generated
+	 */
+	EClass getObjet();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link LDP2.Objet#getMethods <em>Methods</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Methods</em>'.
+	 * @see LDP2.Objet#getMethods()
+	 * @see #getObjet()
+	 * @generated
+	 */
+	EReference getObjet_Methods();
+
+	/**
+	 * Returns the meta object for class '{@link LDP2.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see LDP2.Variable
+	 * @generated
+	 */
+	EClass getVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link LDP2.Variable#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see LDP2.Variable#getName()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link LDP2.Variable#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see LDP2.Variable#getType()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_Type();
+
+	/**
+	 * Returns the meta object for class '{@link LDP2.Method <em>Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Method</em>'.
+	 * @see LDP2.Method
+	 * @generated
+	 */
+	EClass getMethod();
+
+	/**
+	 * Returns the meta object for the attribute '{@link LDP2.Method#getNomMethode <em>Nom Methode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nom Methode</em>'.
+	 * @see LDP2.Method#getNomMethode()
+	 * @see #getMethod()
+	 * @generated
+	 */
+	EAttribute getMethod_NomMethode();
+
+	/**
+	 * Returns the meta object for class '{@link LDP2.Parametre <em>Parametre</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parametre</em>'.
+	 * @see LDP2.Parametre
+	 * @generated
+	 */
+	EClass getParametre();
+
+	/**
+	 * Returns the meta object for the reference list '{@link LDP2.Parametre#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @see LDP2.Parametre#getParameters()
+	 * @see #getParametre()
+	 * @generated
+	 */
+	EReference getParametre_Parameters();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1114,28 +1401,12 @@ public interface LDP2Package extends EPackage {
 		EClass CREATION_VAR = eINSTANCE.getCreationVar();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CREATION_VAR__NOM = eINSTANCE.getCreationVar_Nom();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREATION_VAR__TYPE = eINSTANCE.getCreationVar_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREATION_VAR__VALEUR = eINSTANCE.getCreationVar_Valeur();
+		EReference CREATION_VAR__VAR = eINSTANCE.getCreationVar_Var();
 
 		/**
 		 * The meta object literal for the '{@link LDP2.impl.InstanceObjImpl <em>Instance Obj</em>}' class.
@@ -1148,20 +1419,12 @@ public interface LDP2Package extends EPackage {
 		EClass INSTANCE_OBJ = eINSTANCE.getInstanceObj();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Objet</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INSTANCE_OBJ__NOM = eINSTANCE.getInstanceObj_Nom();
-
-		/**
-		 * The meta object literal for the '<em><b>Classe</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INSTANCE_OBJ__CLASSE = eINSTANCE.getInstanceObj_Classe();
+		EReference INSTANCE_OBJ__OBJET = eINSTANCE.getInstanceObj_Objet();
 
 		/**
 		 * The meta object literal for the '{@link LDP2.impl.AppelMethodeImpl <em>Appel Methode</em>}' class.
@@ -1174,36 +1437,36 @@ public interface LDP2Package extends EPackage {
 		EClass APPEL_METHODE = eINSTANCE.getAppelMethode();
 
 		/**
-		 * The meta object literal for the '<em><b>Resultat</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Resultat</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute APPEL_METHODE__RESULTAT = eINSTANCE.getAppelMethode_Resultat();
+		EReference APPEL_METHODE__RESULTAT = eINSTANCE.getAppelMethode_Resultat();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom Methode</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Objet Appele</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute APPEL_METHODE__NOM_METHODE = eINSTANCE.getAppelMethode_NomMethode();
+		EReference APPEL_METHODE__OBJET_APPELE = eINSTANCE.getAppelMethode_ObjetAppele();
 
 		/**
-		 * The meta object literal for the '<em><b>Objet Appele</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Parametre</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute APPEL_METHODE__OBJET_APPELE = eINSTANCE.getAppelMethode_ObjetAppele();
+		EReference APPEL_METHODE__PARAMETRE = eINSTANCE.getAppelMethode_Parametre();
 
 		/**
-		 * The meta object literal for the '<em><b>Parametres</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Method</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute APPEL_METHODE__PARAMETRES = eINSTANCE.getAppelMethode_Parametres();
+		EReference APPEL_METHODE__METHOD = eINSTANCE.getAppelMethode_Method();
 
 		/**
 		 * The meta object literal for the '{@link LDP2.impl.ElementProcessusImpl <em>Element Processus</em>}' class.
@@ -1258,6 +1521,104 @@ public interface LDP2Package extends EPackage {
 		 * @generated
 		 */
 		EClass JONCTION = eINSTANCE.getJonction();
+
+		/**
+		 * The meta object literal for the '{@link LDP2.impl.VariablePrimitifImpl <em>Variable Primitif</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see LDP2.impl.VariablePrimitifImpl
+		 * @see LDP2.impl.LDP2PackageImpl#getVariablePrimitif()
+		 * @generated
+		 */
+		EClass VARIABLE_PRIMITIF = eINSTANCE.getVariablePrimitif();
+
+		/**
+		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE_PRIMITIF__VALEUR = eINSTANCE.getVariablePrimitif_Valeur();
+
+		/**
+		 * The meta object literal for the '{@link LDP2.impl.ObjetImpl <em>Objet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see LDP2.impl.ObjetImpl
+		 * @see LDP2.impl.LDP2PackageImpl#getObjet()
+		 * @generated
+		 */
+		EClass OBJET = eINSTANCE.getObjet();
+
+		/**
+		 * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBJET__METHODS = eINSTANCE.getObjet_Methods();
+
+		/**
+		 * The meta object literal for the '{@link LDP2.impl.VariableImpl <em>Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see LDP2.impl.VariableImpl
+		 * @see LDP2.impl.LDP2PackageImpl#getVariable()
+		 * @generated
+		 */
+		EClass VARIABLE = eINSTANCE.getVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
+
+		/**
+		 * The meta object literal for the '{@link LDP2.impl.MethodImpl <em>Method</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see LDP2.impl.MethodImpl
+		 * @see LDP2.impl.LDP2PackageImpl#getMethod()
+		 * @generated
+		 */
+		EClass METHOD = eINSTANCE.getMethod();
+
+		/**
+		 * The meta object literal for the '<em><b>Nom Methode</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METHOD__NOM_METHODE = eINSTANCE.getMethod_NomMethode();
+
+		/**
+		 * The meta object literal for the '{@link LDP2.impl.ParametreImpl <em>Parametre</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see LDP2.impl.ParametreImpl
+		 * @see LDP2.impl.LDP2PackageImpl#getParametre()
+		 * @generated
+		 */
+		EClass PARAMETRE = eINSTANCE.getParametre();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETRE__PARAMETERS = eINSTANCE.getParametre_Parameters();
 
 	}
 

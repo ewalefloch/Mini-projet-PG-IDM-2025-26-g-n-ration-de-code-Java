@@ -27,7 +27,7 @@ public class LDPMain2 {
 [if (e.oclIsKindOf(Activite))]
 [let act : Activite = e.oclAsType(Activite)]
 // Activité : [act.nom/]
-[generateActions(act)/]
+[generateActivity(act)/]
 
 [if (act.suivantes->notEmpty())]
 [if (act.suivantes->first().oclIsKindOf(Jonction))]
@@ -88,22 +88,28 @@ thread[branche.nom/].join();
 [/if]
 [/template]
 
-[template public generateActions(act : Activite)]
-[for (a : Action | act.actions)]
-[if (a.oclIsKindOf(CreationVar))]
-[let v : CreationVar = a.oclAsType(CreationVar)]
-[v.type/] [v.nom/][if (v.valeur <> null and v.valeur.size() > 0)] = [v.valeur/][/if];
-[/let]
-[elseif (a.oclIsKindOf(InstanceObj))]
-[let o : InstanceObj = a.oclAsType(InstanceObj)]
-[o.classe/] [o.nom/] = new [o.classe/]();
-[/let]
-[elseif (a.oclIsKindOf(AppelMethode))]
-[let m : AppelMethode = a.oclAsType(AppelMethode)]
-[if (m.resultat <> null and m.resultat.size() > 0)][m.resultat/] = [/if][m.objetAppele/].[m.nomMethode/]([m.parametres->sep(', ')/]);
-[/let]
+[template public generateActivity(anActivite : Activite)]
+[for (act : Action | anActivite.actions)]
+[if (act.oclIsKindOf(CreationVar))]
+[let cv : CreationVar = act.oclAsType(CreationVar)][generateCreationVar(cv)/][/let]
+[elseif (act.oclIsKindOf(InstanceObj))]
+[let io : InstanceObj = act.oclAsType(InstanceObj)][generateInstanceObj(io)/][/let]
+[elseif (act.oclIsKindOf(AppelMethode))]
+[let am : AppelMethode = act.oclAsType(AppelMethode)][generateAppelMethode(am)/][/let]
 [/if]
 [/for]
+[/template]
+
+[template public generateCreationVar(cv : CreationVar)]
+[cv.var.type/] [cv.var.name/][if (cv.var.valeur <> null)] = [cv.var.valeur/][/if];
+[/template]
+
+[template public generateInstanceObj(io : InstanceObj)]
+[io.objet.type/] [io.objet.name/] = new [io.objet.type/]();
+[/template]
+
+[template public generateAppelMethode(am : AppelMethode)]
+[if (am.resultat <> null)][am.resultat.name/] = [/if][am.objetAppele.name/].[am.method.nomMethode/]([if (am.parametre <> null)][am.parametre.parameters.name->sep(', ')/][/if]);
 [/template]
 
 [query public getTargetJonction(e : ElementProcessus) : ElementProcessus = 

@@ -14,9 +14,14 @@ import LDP2.InstanceObj;
 import LDP2.Jonction;
 import LDP2.LDP2Factory;
 import LDP2.LDP2Package;
+import LDP2.Method;
+import LDP2.Objet;
+import LDP2.Parametre;
 import LDP2.Processus;
 import LDP2.PseudoEtat;
 
+import LDP2.Variable;
+import LDP2.VariablePrimitif;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -114,6 +119,41 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	private EClass jonctionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass variablePrimitifEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass objetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass variableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass methodEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parametreEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -311,28 +351,8 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCreationVar_Nom() {
-		return (EAttribute)creationVarEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCreationVar_Type() {
-		return (EAttribute)creationVarEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCreationVar_Valeur() {
-		return (EAttribute)creationVarEClass.getEStructuralFeatures().get(2);
+	public EReference getCreationVar_Var() {
+		return (EReference)creationVarEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -351,18 +371,8 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInstanceObj_Nom() {
-		return (EAttribute)instanceObjEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getInstanceObj_Classe() {
-		return (EAttribute)instanceObjEClass.getEStructuralFeatures().get(1);
+	public EReference getInstanceObj_Objet() {
+		return (EReference)instanceObjEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -381,8 +391,8 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAppelMethode_Resultat() {
-		return (EAttribute)appelMethodeEClass.getEStructuralFeatures().get(0);
+	public EReference getAppelMethode_Resultat() {
+		return (EReference)appelMethodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -391,8 +401,8 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAppelMethode_NomMethode() {
-		return (EAttribute)appelMethodeEClass.getEStructuralFeatures().get(1);
+	public EReference getAppelMethode_ObjetAppele() {
+		return (EReference)appelMethodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -401,8 +411,8 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAppelMethode_ObjetAppele() {
-		return (EAttribute)appelMethodeEClass.getEStructuralFeatures().get(2);
+	public EReference getAppelMethode_Parametre() {
+		return (EReference)appelMethodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -411,8 +421,8 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAppelMethode_Parametres() {
-		return (EAttribute)appelMethodeEClass.getEStructuralFeatures().get(3);
+	public EReference getAppelMethode_Method() {
+		return (EReference)appelMethodeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -481,6 +491,116 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 	 * @generated
 	 */
 	@Override
+	public EClass getVariablePrimitif() {
+		return variablePrimitifEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVariablePrimitif_Valeur() {
+		return (EAttribute)variablePrimitifEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getObjet() {
+		return objetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getObjet_Methods() {
+		return (EReference)objetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getVariable() {
+		return variableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVariable_Name() {
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getVariable_Type() {
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMethod() {
+		return methodEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMethod_NomMethode() {
+		return (EAttribute)methodEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getParametre() {
+		return parametreEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParametre_Parameters() {
+		return (EReference)parametreEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public LDP2Factory getLDP2Factory() {
 		return (LDP2Factory)getEFactoryInstance();
 	}
@@ -523,19 +643,16 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 		actionEClass = createEClass(ACTION);
 
 		creationVarEClass = createEClass(CREATION_VAR);
-		createEAttribute(creationVarEClass, CREATION_VAR__NOM);
-		createEAttribute(creationVarEClass, CREATION_VAR__TYPE);
-		createEAttribute(creationVarEClass, CREATION_VAR__VALEUR);
+		createEReference(creationVarEClass, CREATION_VAR__VAR);
 
 		instanceObjEClass = createEClass(INSTANCE_OBJ);
-		createEAttribute(instanceObjEClass, INSTANCE_OBJ__NOM);
-		createEAttribute(instanceObjEClass, INSTANCE_OBJ__CLASSE);
+		createEReference(instanceObjEClass, INSTANCE_OBJ__OBJET);
 
 		appelMethodeEClass = createEClass(APPEL_METHODE);
-		createEAttribute(appelMethodeEClass, APPEL_METHODE__RESULTAT);
-		createEAttribute(appelMethodeEClass, APPEL_METHODE__NOM_METHODE);
-		createEAttribute(appelMethodeEClass, APPEL_METHODE__OBJET_APPELE);
-		createEAttribute(appelMethodeEClass, APPEL_METHODE__PARAMETRES);
+		createEReference(appelMethodeEClass, APPEL_METHODE__RESULTAT);
+		createEReference(appelMethodeEClass, APPEL_METHODE__OBJET_APPELE);
+		createEReference(appelMethodeEClass, APPEL_METHODE__PARAMETRE);
+		createEReference(appelMethodeEClass, APPEL_METHODE__METHOD);
 
 		elementProcessusEClass = createEClass(ELEMENT_PROCESSUS);
 		createEAttribute(elementProcessusEClass, ELEMENT_PROCESSUS__NOM);
@@ -545,6 +662,22 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 		fourcheEClass = createEClass(FOURCHE);
 
 		jonctionEClass = createEClass(JONCTION);
+
+		variablePrimitifEClass = createEClass(VARIABLE_PRIMITIF);
+		createEAttribute(variablePrimitifEClass, VARIABLE_PRIMITIF__VALEUR);
+
+		objetEClass = createEClass(OBJET);
+		createEReference(objetEClass, OBJET__METHODS);
+
+		variableEClass = createEClass(VARIABLE);
+		createEAttribute(variableEClass, VARIABLE__NAME);
+		createEAttribute(variableEClass, VARIABLE__TYPE);
+
+		methodEClass = createEClass(METHOD);
+		createEAttribute(methodEClass, METHOD__NOM_METHODE);
+
+		parametreEClass = createEClass(PARAMETRE);
+		createEReference(parametreEClass, PARAMETRE__PARAMETERS);
 	}
 
 	/**
@@ -583,6 +716,8 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 		appelMethodeEClass.getESuperTypes().add(this.getAction());
 		fourcheEClass.getESuperTypes().add(this.getElementProcessus());
 		jonctionEClass.getESuperTypes().add(this.getElementProcessus());
+		variablePrimitifEClass.getESuperTypes().add(this.getVariable());
+		objetEClass.getESuperTypes().add(this.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(processusEClass, Processus.class, "Processus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -604,19 +739,16 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(creationVarEClass, CreationVar.class, "CreationVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCreationVar_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, CreationVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreationVar_Type(), ecorePackage.getEString(), "type", null, 0, 1, CreationVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreationVar_Valeur(), ecorePackage.getEString(), "valeur", null, 0, 1, CreationVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreationVar_Var(), this.getVariablePrimitif(), null, "var", null, 1, 1, CreationVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instanceObjEClass, InstanceObj.class, "InstanceObj", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInstanceObj_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, InstanceObj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInstanceObj_Classe(), ecorePackage.getEString(), "classe", null, 0, 1, InstanceObj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstanceObj_Objet(), this.getObjet(), null, "objet", null, 1, 1, InstanceObj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(appelMethodeEClass, AppelMethode.class, "AppelMethode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAppelMethode_Resultat(), ecorePackage.getEString(), "resultat", null, 0, 1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAppelMethode_NomMethode(), ecorePackage.getEString(), "nomMethode", null, 0, 1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAppelMethode_ObjetAppele(), ecorePackage.getEString(), "objetAppele", null, 0, 1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAppelMethode_Parametres(), ecorePackage.getEString(), "parametres", null, 0, -1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAppelMethode_Resultat(), this.getVariable(), null, "resultat", null, 0, 1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAppelMethode_ObjetAppele(), this.getObjet(), null, "objetAppele", null, 1, 1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAppelMethode_Parametre(), this.getParametre(), null, "parametre", null, 0, 1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAppelMethode_Method(), this.getMethod(), null, "method", null, 0, 1, AppelMethode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementProcessusEClass, ElementProcessus.class, "ElementProcessus", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElementProcessus_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, ElementProcessus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -626,6 +758,22 @@ public class LDP2PackageImpl extends EPackageImpl implements LDP2Package {
 		initEClass(fourcheEClass, Fourche.class, "Fourche", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(jonctionEClass, Jonction.class, "Jonction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(variablePrimitifEClass, VariablePrimitif.class, "VariablePrimitif", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariablePrimitif_Valeur(), ecorePackage.getEString(), "valeur", null, 0, 1, VariablePrimitif.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(objetEClass, Objet.class, "Objet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getObjet_Methods(), this.getMethod(), null, "methods", null, 0, -1, Objet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_Type(), ecorePackage.getEString(), "type", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMethod_NomMethode(), ecorePackage.getEString(), "nomMethode", null, 1, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parametreEClass, Parametre.class, "Parametre", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParametre_Parameters(), this.getVariable(), null, "parameters", null, 0, -1, Parametre.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -66,6 +66,10 @@ public class LDP2FactoryImpl extends EFactoryImpl implements LDP2Factory {
 			case LDP2Package.APPEL_METHODE: return createAppelMethode();
 			case LDP2Package.FOURCHE: return createFourche();
 			case LDP2Package.JONCTION: return createJonction();
+			case LDP2Package.VARIABLE_PRIMITIF: return createVariablePrimitif();
+			case LDP2Package.OBJET: return createObjet();
+			case LDP2Package.METHOD: return createMethod();
+			case LDP2Package.PARAMETRE: return createParametre();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -179,6 +183,50 @@ public class LDP2FactoryImpl extends EFactoryImpl implements LDP2Factory {
 	public Jonction createJonction() {
 		JonctionImpl jonction = new JonctionImpl();
 		return jonction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VariablePrimitif createVariablePrimitif() {
+		VariablePrimitifImpl variablePrimitif = new VariablePrimitifImpl();
+		return variablePrimitif;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Objet createObjet() {
+		ObjetImpl objet = new ObjetImpl();
+		return objet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Method createMethod() {
+		MethodImpl method = new MethodImpl();
+		return method;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Parametre createParametre() {
+		ParametreImpl parametre = new ParametreImpl();
+		return parametre;
 	}
 
 	/**

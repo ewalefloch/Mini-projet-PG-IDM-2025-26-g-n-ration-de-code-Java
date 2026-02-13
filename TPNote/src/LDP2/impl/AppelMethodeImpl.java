@@ -5,17 +5,17 @@ package LDP2.impl;
 import LDP2.AppelMethode;
 import LDP2.LDP2Package;
 
-import java.util.Collection;
-
+import LDP2.Method;
+import LDP2.Objet;
+import LDP2.Parametre;
+import LDP2.Variable;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,83 +26,53 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * </p>
  * <ul>
  *   <li>{@link LDP2.impl.AppelMethodeImpl#getResultat <em>Resultat</em>}</li>
- *   <li>{@link LDP2.impl.AppelMethodeImpl#getNomMethode <em>Nom Methode</em>}</li>
  *   <li>{@link LDP2.impl.AppelMethodeImpl#getObjetAppele <em>Objet Appele</em>}</li>
- *   <li>{@link LDP2.impl.AppelMethodeImpl#getParametres <em>Parametres</em>}</li>
+ *   <li>{@link LDP2.impl.AppelMethodeImpl#getParametre <em>Parametre</em>}</li>
+ *   <li>{@link LDP2.impl.AppelMethodeImpl#getMethod <em>Method</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	/**
-	 * The default value of the '{@link #getResultat() <em>Resultat</em>}' attribute.
+	 * The cached value of the '{@link #getResultat() <em>Resultat</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResultat()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RESULTAT_EDEFAULT = null;
+	protected Variable resultat;
 
 	/**
-	 * The cached value of the '{@link #getResultat() <em>Resultat</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResultat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String resultat = RESULTAT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNomMethode() <em>Nom Methode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNomMethode()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOM_METHODE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNomMethode() <em>Nom Methode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNomMethode()
-	 * @generated
-	 * @ordered
-	 */
-	protected String nomMethode = NOM_METHODE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getObjetAppele() <em>Objet Appele</em>}' attribute.
+	 * The cached value of the '{@link #getObjetAppele() <em>Objet Appele</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getObjetAppele()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OBJET_APPELE_EDEFAULT = null;
+	protected Objet objetAppele;
 
 	/**
-	 * The cached value of the '{@link #getObjetAppele() <em>Objet Appele</em>}' attribute.
+	 * The cached value of the '{@link #getParametre() <em>Parametre</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getObjetAppele()
+	 * @see #getParametre()
 	 * @generated
 	 * @ordered
 	 */
-	protected String objetAppele = OBJET_APPELE_EDEFAULT;
+	protected Parametre parametre;
 
 	/**
-	 * The cached value of the '{@link #getParametres() <em>Parametres</em>}' attribute list.
+	 * The cached value of the '{@link #getMethod() <em>Method</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParametres()
+	 * @see #getMethod()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> parametres;
+	protected Method method;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +99,24 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	 * @generated
 	 */
 	@Override
-	public String getResultat() {
+	public Variable getResultat() {
+		if (resultat != null && resultat.eIsProxy()) {
+			InternalEObject oldResultat = (InternalEObject)resultat;
+			resultat = (Variable)eResolveProxy(oldResultat);
+			if (resultat != oldResultat) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDP2Package.APPEL_METHODE__RESULTAT, oldResultat, resultat));
+			}
+		}
+		return resultat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Variable basicGetResultat() {
 		return resultat;
 	}
 
@@ -139,8 +126,8 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	 * @generated
 	 */
 	@Override
-	public void setResultat(String newResultat) {
-		String oldResultat = resultat;
+	public void setResultat(Variable newResultat) {
+		Variable oldResultat = resultat;
 		resultat = newResultat;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.APPEL_METHODE__RESULTAT, oldResultat, resultat));
@@ -152,8 +139,16 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	 * @generated
 	 */
 	@Override
-	public String getNomMethode() {
-		return nomMethode;
+	public Objet getObjetAppele() {
+		if (objetAppele != null && objetAppele.eIsProxy()) {
+			InternalEObject oldObjetAppele = (InternalEObject)objetAppele;
+			objetAppele = (Objet)eResolveProxy(oldObjetAppele);
+			if (objetAppele != oldObjetAppele) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDP2Package.APPEL_METHODE__OBJET_APPELE, oldObjetAppele, objetAppele));
+			}
+		}
+		return objetAppele;
 	}
 
 	/**
@@ -161,21 +156,7 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setNomMethode(String newNomMethode) {
-		String oldNomMethode = nomMethode;
-		nomMethode = newNomMethode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.APPEL_METHODE__NOM_METHODE, oldNomMethode, nomMethode));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getObjetAppele() {
+	public Objet basicGetObjetAppele() {
 		return objetAppele;
 	}
 
@@ -185,8 +166,8 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	 * @generated
 	 */
 	@Override
-	public void setObjetAppele(String newObjetAppele) {
-		String oldObjetAppele = objetAppele;
+	public void setObjetAppele(Objet newObjetAppele) {
+		Objet oldObjetAppele = objetAppele;
 		objetAppele = newObjetAppele;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.APPEL_METHODE__OBJET_APPELE, oldObjetAppele, objetAppele));
@@ -198,11 +179,97 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	 * @generated
 	 */
 	@Override
-	public EList<String> getParametres() {
-		if (parametres == null) {
-			parametres = new EDataTypeUniqueEList<String>(String.class, this, LDP2Package.APPEL_METHODE__PARAMETRES);
+	public Parametre getParametre() {
+		return parametre;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParametre(Parametre newParametre, NotificationChain msgs) {
+		Parametre oldParametre = parametre;
+		parametre = newParametre;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LDP2Package.APPEL_METHODE__PARAMETRE, oldParametre, newParametre);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return parametres;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setParametre(Parametre newParametre) {
+		if (newParametre != parametre) {
+			NotificationChain msgs = null;
+			if (parametre != null)
+				msgs = ((InternalEObject)parametre).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LDP2Package.APPEL_METHODE__PARAMETRE, null, msgs);
+			if (newParametre != null)
+				msgs = ((InternalEObject)newParametre).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LDP2Package.APPEL_METHODE__PARAMETRE, null, msgs);
+			msgs = basicSetParametre(newParametre, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.APPEL_METHODE__PARAMETRE, newParametre, newParametre));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Method getMethod() {
+		if (method != null && method.eIsProxy()) {
+			InternalEObject oldMethod = (InternalEObject)method;
+			method = (Method)eResolveProxy(oldMethod);
+			if (method != oldMethod) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LDP2Package.APPEL_METHODE__METHOD, oldMethod, method));
+			}
+		}
+		return method;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Method basicGetMethod() {
+		return method;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMethod(Method newMethod) {
+		Method oldMethod = method;
+		method = newMethod;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.APPEL_METHODE__METHOD, oldMethod, method));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case LDP2Package.APPEL_METHODE__PARAMETRE:
+				return basicSetParametre(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -214,13 +281,16 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LDP2Package.APPEL_METHODE__RESULTAT:
-				return getResultat();
-			case LDP2Package.APPEL_METHODE__NOM_METHODE:
-				return getNomMethode();
+				if (resolve) return getResultat();
+				return basicGetResultat();
 			case LDP2Package.APPEL_METHODE__OBJET_APPELE:
-				return getObjetAppele();
-			case LDP2Package.APPEL_METHODE__PARAMETRES:
-				return getParametres();
+				if (resolve) return getObjetAppele();
+				return basicGetObjetAppele();
+			case LDP2Package.APPEL_METHODE__PARAMETRE:
+				return getParametre();
+			case LDP2Package.APPEL_METHODE__METHOD:
+				if (resolve) return getMethod();
+				return basicGetMethod();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,17 +305,16 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LDP2Package.APPEL_METHODE__RESULTAT:
-				setResultat((String)newValue);
-				return;
-			case LDP2Package.APPEL_METHODE__NOM_METHODE:
-				setNomMethode((String)newValue);
+				setResultat((Variable)newValue);
 				return;
 			case LDP2Package.APPEL_METHODE__OBJET_APPELE:
-				setObjetAppele((String)newValue);
+				setObjetAppele((Objet)newValue);
 				return;
-			case LDP2Package.APPEL_METHODE__PARAMETRES:
-				getParametres().clear();
-				getParametres().addAll((Collection<? extends String>)newValue);
+			case LDP2Package.APPEL_METHODE__PARAMETRE:
+				setParametre((Parametre)newValue);
+				return;
+			case LDP2Package.APPEL_METHODE__METHOD:
+				setMethod((Method)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -260,16 +329,16 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LDP2Package.APPEL_METHODE__RESULTAT:
-				setResultat(RESULTAT_EDEFAULT);
-				return;
-			case LDP2Package.APPEL_METHODE__NOM_METHODE:
-				setNomMethode(NOM_METHODE_EDEFAULT);
+				setResultat((Variable)null);
 				return;
 			case LDP2Package.APPEL_METHODE__OBJET_APPELE:
-				setObjetAppele(OBJET_APPELE_EDEFAULT);
+				setObjetAppele((Objet)null);
 				return;
-			case LDP2Package.APPEL_METHODE__PARAMETRES:
-				getParametres().clear();
+			case LDP2Package.APPEL_METHODE__PARAMETRE:
+				setParametre((Parametre)null);
+				return;
+			case LDP2Package.APPEL_METHODE__METHOD:
+				setMethod((Method)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -284,37 +353,15 @@ public class AppelMethodeImpl extends ActionImpl implements AppelMethode {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LDP2Package.APPEL_METHODE__RESULTAT:
-				return RESULTAT_EDEFAULT == null ? resultat != null : !RESULTAT_EDEFAULT.equals(resultat);
-			case LDP2Package.APPEL_METHODE__NOM_METHODE:
-				return NOM_METHODE_EDEFAULT == null ? nomMethode != null : !NOM_METHODE_EDEFAULT.equals(nomMethode);
+				return resultat != null;
 			case LDP2Package.APPEL_METHODE__OBJET_APPELE:
-				return OBJET_APPELE_EDEFAULT == null ? objetAppele != null : !OBJET_APPELE_EDEFAULT.equals(objetAppele);
-			case LDP2Package.APPEL_METHODE__PARAMETRES:
-				return parametres != null && !parametres.isEmpty();
+				return objetAppele != null;
+			case LDP2Package.APPEL_METHODE__PARAMETRE:
+				return parametre != null;
+			case LDP2Package.APPEL_METHODE__METHOD:
+				return method != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (resultat: ");
-		result.append(resultat);
-		result.append(", nomMethode: ");
-		result.append(nomMethode);
-		result.append(", objetAppele: ");
-		result.append(objetAppele);
-		result.append(", parametres: ");
-		result.append(parametres);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AppelMethodeImpl

@@ -5,10 +5,13 @@ package LDP2.impl;
 import LDP2.CreationVar;
 import LDP2.LDP2Package;
 
+import LDP2.VariablePrimitif;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -19,73 +22,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link LDP2.impl.CreationVarImpl#getNom <em>Nom</em>}</li>
- *   <li>{@link LDP2.impl.CreationVarImpl#getType <em>Type</em>}</li>
- *   <li>{@link LDP2.impl.CreationVarImpl#getValeur <em>Valeur</em>}</li>
+ *   <li>{@link LDP2.impl.CreationVarImpl#getVar <em>Var</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CreationVarImpl extends ActionImpl implements CreationVar {
 	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getVar()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String nom = NOM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValeur()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALEUR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValeur()
-	 * @generated
-	 * @ordered
-	 */
-	protected String valeur = VALEUR_EDEFAULT;
+	protected VariablePrimitif var;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +63,23 @@ public class CreationVarImpl extends ActionImpl implements CreationVar {
 	 * @generated
 	 */
 	@Override
-	public String getNom() {
-		return nom;
+	public VariablePrimitif getVar() {
+		return var;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVar(VariablePrimitif newVar, NotificationChain msgs) {
+		VariablePrimitif oldVar = var;
+		var = newVar;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LDP2Package.CREATION_VAR__VAR, oldVar, newVar);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -122,11 +88,18 @@ public class CreationVarImpl extends ActionImpl implements CreationVar {
 	 * @generated
 	 */
 	@Override
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.CREATION_VAR__NOM, oldNom, nom));
+	public void setVar(VariablePrimitif newVar) {
+		if (newVar != var) {
+			NotificationChain msgs = null;
+			if (var != null)
+				msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LDP2Package.CREATION_VAR__VAR, null, msgs);
+			if (newVar != null)
+				msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LDP2Package.CREATION_VAR__VAR, null, msgs);
+			msgs = basicSetVar(newVar, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.CREATION_VAR__VAR, newVar, newVar));
 	}
 
 	/**
@@ -135,44 +108,12 @@ public class CreationVarImpl extends ActionImpl implements CreationVar {
 	 * @generated
 	 */
 	@Override
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.CREATION_VAR__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getValeur() {
-		return valeur;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setValeur(String newValeur) {
-		String oldValeur = valeur;
-		valeur = newValeur;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LDP2Package.CREATION_VAR__VALEUR, oldValeur, valeur));
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case LDP2Package.CREATION_VAR__VAR:
+				return basicSetVar(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -183,12 +124,8 @@ public class CreationVarImpl extends ActionImpl implements CreationVar {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LDP2Package.CREATION_VAR__NOM:
-				return getNom();
-			case LDP2Package.CREATION_VAR__TYPE:
-				return getType();
-			case LDP2Package.CREATION_VAR__VALEUR:
-				return getValeur();
+			case LDP2Package.CREATION_VAR__VAR:
+				return getVar();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,14 +138,8 @@ public class CreationVarImpl extends ActionImpl implements CreationVar {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LDP2Package.CREATION_VAR__NOM:
-				setNom((String)newValue);
-				return;
-			case LDP2Package.CREATION_VAR__TYPE:
-				setType((String)newValue);
-				return;
-			case LDP2Package.CREATION_VAR__VALEUR:
-				setValeur((String)newValue);
+			case LDP2Package.CREATION_VAR__VAR:
+				setVar((VariablePrimitif)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,14 +153,8 @@ public class CreationVarImpl extends ActionImpl implements CreationVar {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LDP2Package.CREATION_VAR__NOM:
-				setNom(NOM_EDEFAULT);
-				return;
-			case LDP2Package.CREATION_VAR__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
-			case LDP2Package.CREATION_VAR__VALEUR:
-				setValeur(VALEUR_EDEFAULT);
+			case LDP2Package.CREATION_VAR__VAR:
+				setVar((VariablePrimitif)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,34 +168,10 @@ public class CreationVarImpl extends ActionImpl implements CreationVar {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LDP2Package.CREATION_VAR__NOM:
-				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
-			case LDP2Package.CREATION_VAR__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case LDP2Package.CREATION_VAR__VALEUR:
-				return VALEUR_EDEFAULT == null ? valeur != null : !VALEUR_EDEFAULT.equals(valeur);
+			case LDP2Package.CREATION_VAR__VAR:
+				return var != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nom: ");
-		result.append(nom);
-		result.append(", type: ");
-		result.append(type);
-		result.append(", valeur: ");
-		result.append(valeur);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CreationVarImpl
