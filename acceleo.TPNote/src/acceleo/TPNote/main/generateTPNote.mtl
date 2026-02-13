@@ -1,0 +1,44 @@
+[comment encoding = UTF-8 /]
+[module generateTPNote('http://LDP/1.0')]
+
+
+[template public generateProcessus(aProcessus : Processus)]
+[comment @main/]
+[file ('LdpMain.java', false, 'UTF-8')]
+package generate;
+
+public class LdpMain {
+
+	public static void main(String['[]'/] argv) {
+		[generateActivity(aProcessus.debut.reference)/]
+	}
+}
+[/file]
+[/template]
+
+[template public generateActivity(anActivite : Activite)]
+	[for (act : Action | anActivite.action)]
+	[if (act.oclIsKindOf(CreationVar))]
+	[let creationVariable : CreationVar = act.oclAsType(CreationVar)][generateCreationVar(creationVariable)/][/let]
+	[elseif (act.oclIsKindOf(InstanceObj))]
+	[let instOb : InstanceObj = act.oclAsType(InstanceObj)][generateInstanceObj(instOb)/][/let]
+	[elseif (act.oclIsKindOf(AppelMethode))]
+	[let appelMeth : AppelMethode = act.oclAsType(AppelMethode)][generateAppelMethode(appelMeth)/][/let]
+	[/if]
+	[/for]
+	[if (anActivite.suivante <> null)][generateActivity(anActivite.suivante)/]
+[/if]
+[/template]
+
+[template public generateCreationVar(creationVariable : CreationVar)]
+[creationVariable.type/] [creationVariable.nom/][if creationVariable.valeur <> null] = [creationVariable.valeur/][/if];
+[/template]
+
+[template public generateInstanceObj(instOb : InstanceObj)]
+[instOb.classe/] [instOb.nom/] = new [instOb.classe/]();
+[/template]
+
+[template public generateAppelMethode(appelMeth : AppelMethode)]
+[if appelMeth.resultat <> null][appelMeth.resultat/] = [/if][appelMeth.objetAppele/].[appelMeth.nomMethode/]([appelMeth.parametres->sep(', ')/]);
+[/template]
+

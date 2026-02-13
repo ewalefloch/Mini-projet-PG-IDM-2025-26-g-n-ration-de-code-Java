@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/TPNote/src" modelPluginID="TPNote" modelName="LPDSequence"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>LPDSequence.ecore</foreignModel>
+  <genPackages prefix="LDP2" disposableProviderFactory="true" ecorePackage="LPDSequence.ecore#/">
+    <genClasses ecoreClass="LPDSequence.ecore#//Processus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//Processus/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//Processus/debut"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//Processus/fin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//Processus/elementCourante"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//Activite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//Activite/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//PseudoEtat">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//PseudoEtat/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//Debut"/>
+    <genClasses ecoreClass="LPDSequence.ecore#//Fin"/>
+    <genClasses image="false" ecoreClass="LPDSequence.ecore#//Action"/>
+    <genClasses ecoreClass="LPDSequence.ecore#//CreationVar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//CreationVar/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//CreationVar/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//CreationVar/valeur"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//InstanceObj">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//InstanceObj/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//InstanceObj/classe"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//AppelMethode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/resultat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/nomMethode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/objetAppele"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//AppelMethode/parametres"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="LPDSequence.ecore#//ElementProcessus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSequence.ecore#//ElementProcessus/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//ElementProcessus/suivantes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPDSequence.ecore#//ElementProcessus/precedents"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSequence.ecore#//Fourche"/>
+    <genClasses ecoreClass="LPDSequence.ecore#//Jonction"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LDP:Processus
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:LDP="http://LDP/1.0">
+  <activites
+      name="init"
+      suivante="//@activites.1">
+    <action
+        xsi:type="LDP:CreationVar"
+        nom="n"
+        type="int"
+        valeur="6"/>
+    <action
+        xsi:type="LDP:CreationVar"
+        nom="puiss"
+        type="int"
+        valeur="3"/>
+    <action
+        xsi:type="LDP:CreationVar"
+        nom="x"
+        type="int"
+        valeur="100"/>
+    <action
+        xsi:type="LDP:InstanceObj"
+        nom="calc"
+        classe="Calcul"/>
+    <action
+        xsi:type="LDP:InstanceObj"
+        nom="log"
+        classe="Logger"/>
+  </activites>
+  <activites
+      name="fact"
+      suivante="//@activites.2"
+      precedente="//@activites.0">
+    <action
+        xsi:type="LDP:CreationVar"
+        nom="resFact"
+        type="int "/>
+    <action
+        xsi:type="LDP:AppelMethode"
+        resultat="resFact"
+        nomMethode="factorial"
+        objetAppele="calc">
+      <parametres>n</parametres>
+    </action>
+  </activites>
+  <activites
+      name="sqrt "
+      suivante="//@activites.3"
+      precedente="//@activites.1">
+    <action
+        xsi:type="LDP:CreationVar"
+        nom="resSqrt"
+        type="int "/>
+    <action
+        xsi:type="LDP:AppelMethode"
+        resultat="resSqrt"
+        nomMethode="sqrt"
+        objetAppele="calc">
+      <parametres>resFact</parametres>
+    </action>
+  </activites>
+  <activites
+      name="pow "
+      suivante="//@activites.4"
+      precedente="//@activites.2">
+    <action
+        xsi:type="LDP:CreationVar"
+        nom="resPower"
+        type="int "/>
+    <action
+        xsi:type="LDP:AppelMethode"
+        resultat="resPower"
+        nomMethode="power"
+        objetAppele="calc">
+      <parametres>resSqrt</parametres>
+      <parametres>puiss</parametres>
+    </action>
+  </activites>
+  <activites
+      name="div "
+      precedente="//@activites.3">
+    <action
+        xsi:type="LDP:CreationVar"
+        nom="resDiv"
+        type="int "/>
+    <action
+        xsi:type="LDP:AppelMethode"
+        resultat="resDiv"
+        nomMethode="division"
+        objetAppele="calc">
+      <parametres>resPower</parametres>
+      <parametres>x</parametres>
+    </action>
+    <action
+        xsi:type="LDP:AppelMethode"
+        nomMethode="printValue"
+        objetAppele="log">
+      <parametres>resDiv</parametres>
+    </action>
+  </activites>
+  <debut reference="//@activites.0"/>
+  <fin reference="//@activites.4"/>
+</LDP:Processus>
