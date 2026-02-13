@@ -27,19 +27,32 @@
     <genClasses ecoreClass="LPD.ecore#//Fin"/>
     <genClasses image="false" ecoreClass="LPD.ecore#//Action"/>
     <genClasses ecoreClass="LPD.ecore#//CreationVar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//CreationVar/nom"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//CreationVar/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//CreationVar/valeur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPD.ecore#//CreationVar/var"/>
     </genClasses>
     <genClasses ecoreClass="LPD.ecore#//InstanceObj">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//InstanceObj/nom"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//InstanceObj/classe"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPD.ecore#//InstanceObj/objet"/>
     </genClasses>
     <genClasses ecoreClass="LPD.ecore#//AppelMethode">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//AppelMethode/resultat"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//AppelMethode/nomMethode"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//AppelMethode/objetAppele"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//AppelMethode/parametres"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPD.ecore#//AppelMethode/resultat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPD.ecore#//AppelMethode/objetAppele"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPD.ecore#//AppelMethode/parametre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPD.ecore#//AppelMethode/method"/>
+    </genClasses>
+    <genClasses ecoreClass="LPD.ecore#//VariablePrimitif">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//VariablePrimitif/valeur"/>
+    </genClasses>
+    <genClasses ecoreClass="LPD.ecore#//Objet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPD.ecore#//Objet/methods"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="LPD.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//Variable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="LPD.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPD.ecore#//Method/nomMethode"/>
+    </genClasses>
+    <genClasses ecoreClass="LPD.ecore#//Parametre">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LPD.ecore#//Parametre/parameters"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -2,8 +2,6 @@
  */
 package LDP;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Appel Methode</b></em>'.
@@ -14,9 +12,9 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link LDP.AppelMethode#getResultat <em>Resultat</em>}</li>
- *   <li>{@link LDP.AppelMethode#getNomMethode <em>Nom Methode</em>}</li>
  *   <li>{@link LDP.AppelMethode#getObjetAppele <em>Objet Appele</em>}</li>
- *   <li>{@link LDP.AppelMethode#getParametres <em>Parametres</em>}</li>
+ *   <li>{@link LDP.AppelMethode#getParametre <em>Parametre</em>}</li>
+ *   <li>{@link LDP.AppelMethode#getMethod <em>Method</em>}</li>
  * </ul>
  *
  * @see LDP.LDPPackage#getAppelMethode()
@@ -25,81 +23,91 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface AppelMethode extends Action {
 	/**
-	 * Returns the value of the '<em><b>Resultat</b></em>' attribute.
+	 * Returns the value of the '<em><b>Resultat</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resultat</em>' attribute.
-	 * @see #setResultat(String)
+	 * @return the value of the '<em>Resultat</em>' reference.
+	 * @see #setResultat(VariablePrimitif)
 	 * @see LDP.LDPPackage#getAppelMethode_Resultat()
 	 * @model
 	 * @generated
 	 */
-	String getResultat();
+	VariablePrimitif getResultat();
 
 	/**
-	 * Sets the value of the '{@link LDP.AppelMethode#getResultat <em>Resultat</em>}' attribute.
+	 * Sets the value of the '{@link LDP.AppelMethode#getResultat <em>Resultat</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resultat</em>' attribute.
+	 * @param value the new value of the '<em>Resultat</em>' reference.
 	 * @see #getResultat()
 	 * @generated
 	 */
-	void setResultat(String value);
+	void setResultat(VariablePrimitif value);
 
 	/**
-	 * Returns the value of the '<em><b>Nom Methode</b></em>' attribute.
+	 * Returns the value of the '<em><b>Objet Appele</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nom Methode</em>' attribute.
-	 * @see #setNomMethode(String)
-	 * @see LDP.LDPPackage#getAppelMethode_NomMethode()
-	 * @model
-	 * @generated
-	 */
-	String getNomMethode();
-
-	/**
-	 * Sets the value of the '{@link LDP.AppelMethode#getNomMethode <em>Nom Methode</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nom Methode</em>' attribute.
-	 * @see #getNomMethode()
-	 * @generated
-	 */
-	void setNomMethode(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Objet Appele</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Objet Appele</em>' attribute.
-	 * @see #setObjetAppele(String)
+	 * @return the value of the '<em>Objet Appele</em>' reference.
+	 * @see #setObjetAppele(Objet)
 	 * @see LDP.LDPPackage#getAppelMethode_ObjetAppele()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	String getObjetAppele();
+	Objet getObjetAppele();
 
 	/**
-	 * Sets the value of the '{@link LDP.AppelMethode#getObjetAppele <em>Objet Appele</em>}' attribute.
+	 * Sets the value of the '{@link LDP.AppelMethode#getObjetAppele <em>Objet Appele</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Objet Appele</em>' attribute.
+	 * @param value the new value of the '<em>Objet Appele</em>' reference.
 	 * @see #getObjetAppele()
 	 * @generated
 	 */
-	void setObjetAppele(String value);
+	void setObjetAppele(Objet value);
 
 	/**
-	 * Returns the value of the '<em><b>Parametres</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Parametre</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parametres</em>' attribute list.
-	 * @see LDP.LDPPackage#getAppelMethode_Parametres()
-	 * @model
+	 * @return the value of the '<em>Parametre</em>' containment reference.
+	 * @see #setParametre(Parametre)
+	 * @see LDP.LDPPackage#getAppelMethode_Parametre()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<String> getParametres();
+	Parametre getParametre();
+
+	/**
+	 * Sets the value of the '{@link LDP.AppelMethode#getParametre <em>Parametre</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parametre</em>' containment reference.
+	 * @see #getParametre()
+	 * @generated
+	 */
+	void setParametre(Parametre value);
+
+	/**
+	 * Returns the value of the '<em><b>Method</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Method</em>' reference.
+	 * @see #setMethod(Method)
+	 * @see LDP.LDPPackage#getAppelMethode_Method()
+	 * @model required="true"
+	 * @generated
+	 */
+	Method getMethod();
+
+	/**
+	 * Sets the value of the '{@link LDP.AppelMethode#getMethod <em>Method</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Method</em>' reference.
+	 * @see #getMethod()
+	 * @generated
+	 */
+	void setMethod(Method value);
 
 } // AppelMethode

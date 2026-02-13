@@ -64,6 +64,10 @@ public class LDPFactoryImpl extends EFactoryImpl implements LDPFactory {
 			case LDPPackage.CREATION_VAR: return createCreationVar();
 			case LDPPackage.INSTANCE_OBJ: return createInstanceObj();
 			case LDPPackage.APPEL_METHODE: return createAppelMethode();
+			case LDPPackage.VARIABLE_PRIMITIF: return createVariablePrimitif();
+			case LDPPackage.OBJET: return createObjet();
+			case LDPPackage.METHOD: return createMethod();
+			case LDPPackage.PARAMETRE: return createParametre();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -155,6 +159,50 @@ public class LDPFactoryImpl extends EFactoryImpl implements LDPFactory {
 	public AppelMethode createAppelMethode() {
 		AppelMethodeImpl appelMethode = new AppelMethodeImpl();
 		return appelMethode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VariablePrimitif createVariablePrimitif() {
+		VariablePrimitifImpl variablePrimitif = new VariablePrimitifImpl();
+		return variablePrimitif;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Objet createObjet() {
+		ObjetImpl objet = new ObjetImpl();
+		return objet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Method createMethod() {
+		MethodImpl method = new MethodImpl();
+		return method;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Parametre createParametre() {
+		ParametreImpl parametre = new ParametreImpl();
+		return parametre;
 	}
 
 	/**

@@ -104,6 +104,26 @@ public class LDPAdapterFactory extends AdapterFactoryImpl {
 				return createAppelMethodeAdapter();
 			}
 			@Override
+			public Adapter caseVariablePrimitif(VariablePrimitif object) {
+				return createVariablePrimitifAdapter();
+			}
+			@Override
+			public Adapter caseObjet(Objet object) {
+				return createObjetAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseMethod(Method object) {
+				return createMethodAdapter();
+			}
+			@Override
+			public Adapter caseParametre(Parametre object) {
+				return createParametreAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -246,6 +266,76 @@ public class LDPAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAppelMethodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link LDP.VariablePrimitif <em>Variable Primitif</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see LDP.VariablePrimitif
+	 * @generated
+	 */
+	public Adapter createVariablePrimitifAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link LDP.Objet <em>Objet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see LDP.Objet
+	 * @generated
+	 */
+	public Adapter createObjetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link LDP.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see LDP.Variable
+	 * @generated
+	 */
+	public Adapter createVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link LDP.Method <em>Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see LDP.Method
+	 * @generated
+	 */
+	public Adapter createMethodAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link LDP.Parametre <em>Parametre</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see LDP.Parametre
+	 * @generated
+	 */
+	public Adapter createParametreAdapter() {
 		return null;
 	}
 

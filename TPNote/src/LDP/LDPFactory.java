@@ -94,6 +94,42 @@ public interface LDPFactory extends EFactory {
 	AppelMethode createAppelMethode();
 
 	/**
+	 * Returns a new object of class '<em>Variable Primitif</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable Primitif</em>'.
+	 * @generated
+	 */
+	VariablePrimitif createVariablePrimitif();
+
+	/**
+	 * Returns a new object of class '<em>Objet</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Objet</em>'.
+	 * @generated
+	 */
+	Objet createObjet();
+
+	/**
+	 * Returns a new object of class '<em>Method</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Method</em>'.
+	 * @generated
+	 */
+	Method createMethod();
+
+	/**
+	 * Returns a new object of class '<em>Parametre</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parametre</em>'.
+	 * @generated
+	 */
+	Parametre createParametre();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
